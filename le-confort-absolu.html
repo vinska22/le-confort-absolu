@@ -171,6 +171,43 @@
     .service-card__price { font-size: var(--text-sm); font-weight: 500; color: var(--color-primary); }
     .service-card__duration { font-size: var(--text-xs); color: var(--color-text-faint); margin-top: var(--space-1); }
 
+    /* ===== MASSAGES ===== */
+    .massages { padding: clamp(var(--space-16), 8vw, var(--space-24)) 0; }
+    .massages__header { text-align: center; margin-bottom: var(--space-12); }
+    .massages__header .section-desc { margin-inline: auto; }
+    .massages__banner { position: relative; border-radius: var(--radius-xl); overflow: hidden; margin-bottom: var(--space-16); height: clamp(280px, 40vw, 480px); }
+    .massages__banner img { width: 100%; height: 100%; object-fit: cover; }
+    .massages__banner-overlay { position: absolute; inset: 0; background: linear-gradient(to right, oklch(0.1 0.02 60 / 0.82) 0%, oklch(0.1 0.02 60 / 0.3) 55%, transparent 100%); display: flex; align-items: center; }
+    .massages__banner-content { padding: var(--space-12); max-width: 500px; }
+    .massages__banner-eyebrow { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); font-weight: 500; margin-bottom: var(--space-3); display: block; }
+    .massages__banner-title { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 300; color: #fff; line-height: 1.15; margin-bottom: var(--space-5); }
+    .massages__banner-title em { font-style: italic; color: var(--color-gold); }
+    .massages__banner-desc { font-size: var(--text-sm); color: oklch(0.88 0.01 60); line-height: 1.7; margin-bottom: var(--space-6); }
+    .massages__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: var(--space-6); margin-bottom: var(--space-12); }
+    .massage-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); overflow: hidden; transition: transform var(--transition), box-shadow var(--transition); }
+    .massage-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .massage-card__image { aspect-ratio: 4/3; overflow: hidden; }
+    .massage-card__image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .massage-card:hover .massage-card__image img { transform: scale(1.06); }
+    .massage-card__body { padding: var(--space-6); }
+    .massage-card__tag { display: inline-block; background: var(--color-primary-light); color: var(--color-primary); font-size: var(--text-xs); font-weight: 500; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); margin-bottom: var(--space-3); text-transform: uppercase; letter-spacing: 0.08em; }
+    .massage-card__title { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-2); color: var(--color-text); }
+    .massage-card__desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; margin-bottom: var(--space-4); }
+    .massage-card__footer { display: flex; align-items: center; justify-content: space-between; }
+    .massage-card__price { font-size: var(--text-sm); font-weight: 600; color: var(--color-primary); }
+    .massage-card__duration { font-size: var(--text-xs); color: var(--color-text-faint); }
+    .massages__benefits { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-10); display: grid; grid-template-columns: repeat(auto-fill, minmax(min(190px, 100%), 1fr)); gap: var(--space-8); }
+    .massages__benefit { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-3); }
+    .massages__benefit-icon { width: 56px; height: 56px; background: var(--color-primary-light); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-primary); }
+    .massages__benefit-icon svg { width: 26px; height: 26px; }
+    .massages__benefit-title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; color: var(--color-text); }
+    .massages__benefit-desc { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.6; }
+    @media (max-width: 768px) {
+      .massages__banner-content { padding: var(--space-8) var(--space-6); }
+      .massages__benefits { padding: var(--space-8) var(--space-6); }
+    }
+    @media (max-width: 480px) { .massages__banner { height: 72vw; } }
+
     /* ===== ABOUT ===== */
     .about { padding: clamp(var(--space-16), 8vw, var(--space-24)) 0; background: var(--color-surface); }
     .about__inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center; }
@@ -312,6 +349,7 @@
       </a>
       <div class="nav__links" role="list">
         <a href="#services" class="nav__link" role="listitem">Services</a>
+        <a href="#massages" class="nav__link" role="listitem">Massages</a>
         <a href="#about" class="nav__link" role="listitem">À propos</a>
         <a href="#galerie" class="nav__link" role="listitem">Galerie</a>
         <a href="#rdv" class="nav__link" role="listitem">Contact</a>
@@ -330,6 +368,7 @@
 
   <div class="mobile-menu" id="mobile-menu" role="menu">
     <a href="#services" role="menuitem">Services</a>
+    <a href="#massages" role="menuitem">Massages</a>
     <a href="#about" role="menuitem">À propos</a>
     <a href="#galerie" role="menuitem">Galerie</a>
     <a href="#rdv" role="menuitem">Contact</a>
@@ -446,6 +485,128 @@
           </article>
 
         </div>
+      </div>
+    </section>
+
+    <!-- MASSAGES -->
+    <section class="massages" id="massages" aria-labelledby="massages-title">
+      <div class="container">
+        <div class="massages__header reveal">
+          <span class="section-eyebrow">Bien-être & Détente</span>
+          <h2 class="section-title" id="massages-title">Nos soins de <em>massage</em></h2>
+          <p class="section-desc">Des techniques professionnelles adaptées à vos besoins pour libérer les tensions et retrouver un équilibre profond du corps et de l'esprit.</p>
+        </div>
+
+        <!-- Banner image -->
+        <div class="massages__banner reveal">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1400&q=80" alt="Salle de massage zen et apaisante" width="1400" height="600" loading="lazy" />
+          <div class="massages__banner-overlay">
+            <div class="massages__banner-content">
+              <span class="massages__banner-eyebrow">Expérience signature</span>
+              <h3 class="massages__banner-title">Un voyage vers la <em>sérénité</em></h3>
+              <p class="massages__banner-desc">Dans notre espace dédié, chaque séance est conçue pour vous offrir une détente totale — corps, esprit et âme.</p>
+              <a href="#rdv" class="btn-primary" style="display:inline-block">Réserver ma séance →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Massage cards with images -->
+        <div class="massages__grid">
+
+          <article class="massage-card reveal">
+            <div class="massage-card__image">
+              <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80" alt="Massage suédois relaxant" width="600" height="400" loading="lazy" />
+            </div>
+            <div class="massage-card__body">
+              <span class="massage-card__tag">Relaxant</span>
+              <h3 class="massage-card__title">Massage Suédois</h3>
+              <p class="massage-card__desc">Technique classique aux manœuvres longues et enveloppantes. Idéal pour réduire le stress, améliorer la circulation et procurer une détente profonde du corps entier.</p>
+              <div class="massage-card__footer">
+                <span class="massage-card__price">À partir de 70 $</span>
+                <span class="massage-card__duration">⏱ 60 – 90 min</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="massage-card reveal">
+            <div class="massage-card__image">
+              <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80" alt="Massage aux pierres chaudes volcaniques" width="600" height="400" loading="lazy" />
+            </div>
+            <div class="massage-card__body">
+              <span class="massage-card__tag">Chaleur thérapeutique</span>
+              <h3 class="massage-card__title">Pierres Chaudes</h3>
+              <p class="massage-card__desc">Des pierres de basalte chauffées placées sur les points de tension pour une relaxation musculaire en profondeur. Une expérience enveloppante et profondément apaisante.</p>
+              <div class="massage-card__footer">
+                <span class="massage-card__price">À partir de 90 $</span>
+                <span class="massage-card__duration">⏱ 75 – 90 min</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="massage-card reveal">
+            <div class="massage-card__image">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Massage thérapeutique ciblé sur les épaules" width="600" height="400" loading="lazy" />
+            </div>
+            <div class="massage-card__body">
+              <span class="massage-card__tag">Thérapeutique</span>
+              <h3 class="massage-card__title">Massage Thérapeutique</h3>
+              <p class="massage-card__desc">Ciblé sur les zones de tensions chroniques — nuque, épaules, lombaires. Techniques profondes pour soulager douleurs et contractures musculaires persistantes.</p>
+              <div class="massage-card__footer">
+                <span class="massage-card__price">À partir de 80 $</span>
+                <span class="massage-card__duration">⏱ 60 min</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="massage-card reveal">
+            <div class="massage-card__image">
+              <img src="https://images.unsplash.com/photo-1591343395082-e120087004b4?w=600&q=80" alt="Réflexologie plantaire" width="600" height="400" loading="lazy" />
+            </div>
+            <div class="massage-card__body">
+              <span class="massage-card__tag">Énergie & équilibre</span>
+              <h3 class="massage-card__title">Réflexologie</h3>
+              <p class="massage-card__desc">Stimulation des zones réflexes des pieds correspondant à chaque organe. Rééquilibre le corps, soulage les tensions internes et booste l'énergie naturelle.</p>
+              <div class="massage-card__footer">
+                <span class="massage-card__price">À partir de 65 $</span>
+                <span class="massage-card__duration">⏱ 45 – 60 min</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Benefits strip -->
+        <div class="massages__benefits reveal">
+          <div class="massages__benefit">
+            <div class="massages__benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="massages__benefit-title">Produits naturels</div>
+            <div class="massages__benefit-desc">Huiles et crèmes 100 % naturelles, douces pour la peau</div>
+          </div>
+          <div class="massages__benefit">
+            <div class="massages__benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="massages__benefit-title">Séances sur mesure</div>
+            <div class="massages__benefit-desc">Chaque massage est adapté à vos besoins et préférences</div>
+          </div>
+          <div class="massages__benefit">
+            <div class="massages__benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="massages__benefit-title">Environnement zen</div>
+            <div class="massages__benefit-desc">Musique douce, lumière tamisée, ambiance apaisante</div>
+          </div>
+          <div class="massages__benefit">
+            <div class="massages__benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="massages__benefit-title">Thérapeute certifiée</div>
+            <div class="massages__benefit-desc">Formation professionnelle et expérience de plus de 8 ans</div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -687,6 +848,7 @@
           <div class="footer__col-title">Navigation</div>
           <nav class="footer__links" aria-label="Navigation pied de page">
             <a href="#services">Nos services</a>
+            <a href="#massages">Massages</a>
             <a href="#about">À propos</a>
             <a href="#galerie">Galerie</a>
             <a href="#rdv">Prendre RDV</a>
